@@ -8,7 +8,7 @@ use Demai\BusinessProcess\State\StateInterface;
 
 interface EntityInterface
 {
-    public function getState() : StateInterface;
+    public function getState(): StateInterface;
 
-    public function setState(StateInterface $state) : bool|string;
+    public function setState(StateInterface $state): bool|string;
 }

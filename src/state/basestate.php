@@ -11,7 +11,7 @@ use Override;
 abstract class BaseState implements StateInterface
 {
     protected StateValidatorInterface $validator;
-    
+
     #[Override]
     public function getValidator(): StateValidatorInterface
     {

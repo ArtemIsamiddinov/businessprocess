@@ -13,17 +13,17 @@ class StateRouter
     {
     }
 
-    public function setState(StateInterface $state, bool $skipWay = false) : bool|string
+    public function setState(StateInterface $state, bool $skipWay = false): bool|string
     {
-        if(!$skipWay){
+        if (!$skipWay) {
             $stateWay = $this->entity->getState()->getNext();
-            if(count(array_filter($stateWay, fn($ws) : bool => $ws::class === $state::class)) === 0){
+            if (count(array_filter($stateWay, fn($ws): bool => $ws::class === $state::class)) === 0) {
                 return "incorrect state";
             }
         }
 
         $validate = $state->getValidator()->validate($this->entity);
-        if($validate !== true){
+        if ($validate !== true) {
             return $validate;
         }
 

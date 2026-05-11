@@ -8,5 +8,5 @@ use Demai\BusinessProcess\Entity;
 
 interface StateValidatorInterface
 {
-    public function validate(Entity\EntityInterface $entity) : bool|string;
+    public function validate(Entity\EntityInterface $entity): bool|string;
 }
