@@ -2,6 +2,7 @@
     "name": "demai/business-process",
     "description": "Package for fast create business processes logic and realization",
     "license": "GPL-3.0-only",
+    "version": "0.3.0",
     "autoload": {
         "psr-4": {
             "Demai\\BusinessProcess\\": "src/"
@@ -10,7 +11,8 @@
     "authors": [
         {
             "name": "Artem Isamiddinov",
-            "email": "artemisamiddinov@gmail.com"
+            "email": "artemisamiddinov@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
