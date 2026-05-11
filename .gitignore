@@ -1,5 +1,7 @@
 /*
-!LICENSE
-!.gitignore
-!composer.json
-!src
+!/LICENSE
+!/.gitignore
+!/composer.json
+!/src
+!/phpcs.xml.dist
+!/.travis.yml
