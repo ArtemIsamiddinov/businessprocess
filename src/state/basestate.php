@@ -6,6 +6,7 @@ namespace Demai\BusinessProcess\State;
 
 use Demai\BusinessProcess\State\StateInterface;
 use Demai\BusinessProcess\StateValidatorInterface;
+use Override;
 
 abstract class BaseState implements StateInterface
 {
