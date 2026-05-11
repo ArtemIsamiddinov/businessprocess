@@ -10,8 +10,6 @@ interface StateInterface
 {
     public function getNext() : array;
 
-    public function getPrimary() : int|string;
-
     public function getValidator() : StateValidatorInterface;
 
     public function setValidator(StateValidatorInterface $validator) : StateInterface;

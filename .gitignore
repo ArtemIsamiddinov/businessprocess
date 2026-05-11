@@ -1,2 +1,5 @@
-Dockerfile
-vendor
+*
+!LICENSE
+!.gitignore
+!composer.json
+!src
