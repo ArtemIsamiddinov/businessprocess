@@ -5,3 +5,4 @@
 !/src
 !/phpcs.xml.dist
 !/.travis.yml
+!/.github/workflows/github.yml
