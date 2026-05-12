@@ -10,19 +10,35 @@ jobs:
   php-cs-sniffer:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        php-version: ['8.1', '8.2', '8.3', '8.4']
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: ${{ matrix.php-version }}
           extensions: xmlwriter, zip
           tools: composer:v2
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
 
       - name: Run PHP CodeSniffer
-        run: ./vendor/bin/phpcs --standard=PSR12 src/
+        run: |
+          ./vendor/bin/phpcs
+          EXIT_CODE=$?
+          
+          if [ $EXIT_CODE -eq 0 ]; then
+            echo "Все отлично, стиль кода соответствует правилам!"
+            exit 0
+          else
+            echo "Произошла критическая ошибка выполнения CodeSniffer (код $EXIT_CODE)!"
+            exit $EXIT_CODE
+          fi
