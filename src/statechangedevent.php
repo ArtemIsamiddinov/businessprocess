@@ -17,5 +17,6 @@ final class StateChangedEvent
         public readonly StateInterface $fromState,
         public readonly StateInterface $toState,
         public readonly mixed $context = null
-    ) {}
+    ) {
+    }
 }

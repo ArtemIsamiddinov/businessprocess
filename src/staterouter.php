@@ -12,9 +12,10 @@ use Psr\EventDispatcher\EventDispatcherInterface;
 class StateRouter
 {
     public function __construct(
-        protected ?EntityInterface $entity, 
+        protected ?EntityInterface $entity,
         protected ?EventDispatcherInterface $dispatcher = null
-    ) {}
+    ) {
+    }
 
     public function setState(StateInterface $state, bool $skipWay = false, mixed $context = null): bool|string
     {
@@ -32,7 +33,7 @@ class StateRouter
 
         $fromState = $this->entity->getState();
         $result = $this->entity->setState($state);
-        if($result === true && $this->dispatcher !== null) {
+        if ($result === true && $this->dispatcher !== null) {
             $this->dispatcher->dispatch(
                 new StateChangedEvent($this->entity, $fromState, $state, $context)
             );
