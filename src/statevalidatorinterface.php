@@ -11,5 +11,8 @@ use Demai\BusinessProcess\Entity;
  */
 interface StateValidatorInterface
 {
+    /**
+     * Выполнить валидацю
+     */
     public function validate(Entity\EntityInterface $entity): bool|string;
 }

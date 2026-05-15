@@ -2,7 +2,7 @@
 !/LICENSE
 !/.gitignore
 !/composer.json
-!/src/*
+!/src/
 !/phpcs.xml.dist
 
 !/.github/
