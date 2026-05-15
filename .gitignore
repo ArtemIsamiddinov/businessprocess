@@ -1,10 +1,12 @@
 /*
-!/LICENSE
+
 !/.gitignore
 !/composer.json
-!/src/
-!/phpcs.xml.dist
 
+!/src/
+!/LICENSE
+
+!/phpcs.xml.dist
 !/.github/
 !/.github/workflows/
 !/.github/workflows/github.yml
