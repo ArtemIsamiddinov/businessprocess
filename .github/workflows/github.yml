@@ -42,6 +42,23 @@ jobs:
             echo "Произошла критическая ошибка выполнения CodeSniffer (код $EXIT_CODE)!"
             exit $EXIT_CODE
           fi
+          
+  php-unit-tests:
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
 
-      - name: Run php-unit tests
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: xmlwriter, zip, mbstring
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run PHPUnit Tests
         run: ./vendor/bin/phpunit
