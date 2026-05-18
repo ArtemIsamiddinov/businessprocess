@@ -39,7 +39,7 @@ final class EntityTest extends TestCase
         $entity = new class extends BaseEntity
         {};
 
-        $this->assertTrue($entity->setState($state), "При вызове метода setState у сущности возникает ошибка");
+        $this->assertTrue($entity->setState($state), "Некорректный ответ при установлении статуса сущности");
         $this->assertSame($entity->getState()::class, $expected, "Возвращаемый статус сущности не соответствует заданному");
     }
 
