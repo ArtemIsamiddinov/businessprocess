@@ -5,6 +5,7 @@
 
 !/src/
 !/LICENSE
+!/tests/
 
 !/phpcs.xml.dist
 !/.github/
