@@ -5,7 +5,9 @@
 
 !/src/
 !/LICENSE
+
 !/tests/
+!/phpunit.xml
 
 !/phpcs.xml.dist
 !/.github/

@@ -42,3 +42,6 @@ jobs:
             echo "Произошла критическая ошибка выполнения CodeSniffer (код $EXIT_CODE)!"
             exit $EXIT_CODE
           fi
+
+      - name: Run php-unit tests
+        run: ./vendor/bin/phpunit
