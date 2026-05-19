@@ -127,4 +127,4 @@ class OrderNotificationListener
 
 ## Лицензия
 
-Этот проект распространяется под лицензией MIT. Подробности см. в файле [LICENSE](LICENSE).
+Этот проект распространяется под лицензией GNU General Public License v3 (GPL-3.0-only). Подробности см. в файле [LICENSE](LICENSE).
