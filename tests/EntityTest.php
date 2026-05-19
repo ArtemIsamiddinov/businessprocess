@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Demai\BusinessProcess\State\NullState;
 use Demai\BusinessProcess\State\BaseState;
 use Demai\BusinessProcess\State\StateInterface;
+use \Override;
 
 class TestState extends BaseState
 {
