@@ -8,6 +8,11 @@
             "Demai\\BusinessProcess\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Demai\\BusinessProcess\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Artem Isamiddinov",

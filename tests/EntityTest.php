@@ -2,11 +2,14 @@
 
 declare(strict_types=1);
 
+namespace Demai\BusinessProcess\Tests;
+
 use Demai\BusinessProcess\Entity\BaseEntity;
 use PHPUnit\Framework\TestCase;
 use Demai\BusinessProcess\State\NullState;
 use Demai\BusinessProcess\State\BaseState;
 use Demai\BusinessProcess\State\StateInterface;
+use \Override;
 
 class TestState extends BaseState
 {
