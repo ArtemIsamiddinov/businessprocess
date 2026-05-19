@@ -30,7 +30,7 @@ use Demai\BusinessProcess\Entity\BaseEntity;
 class Order extends BaseEntity
 {
     public function __construct(
-        private int \$id
+        private int $id
     ) {
         // До явной установки статуса свойство state автоматически 
         // защищено объектом NullState
@@ -68,20 +68,20 @@ class NewOrderState extends BaseState
 ```php
 use Demai\BusinessProcess\StateRouter;
 
-\$order = new Order(123);
-\$order->setState(new NewOrderState()); // Задаем начальное состояние
+$order = new Order(123);
+$order->setState(new NewOrderState()); // Задаем начальное состояние
 
 // Инициализируем роутер (опционально вторым аргументом можно передать ваш PSR-14 EventDispatcher)
-\$router = new StateRouter(\$order);
+$router = new StateRouter($order);
 
 // Выполняем переход с передачей контекста (например, ID пользователя)
-\$context = ['actor_id' => 42];
-\$result = \$router->setState(new ProcessingOrderState(), false, \$context);
+$context = ['actor_id' => 42];
+$result = $router->setState(new ProcessingOrderState(), false, $context);
 
-if (\$result === true) {
+if ($result === true) {
     echo "Состояние заказа успешно обновлено!";
 } else {
-    echo "Переход заблокирован: " . \$result; // Например: "incorrect state" или текст ошибки из валидатора
+    echo "Переход заблокирован: " . $result; // Например: "incorrect state" или текст ошибки из валидатора
 }
 ```
 
@@ -94,12 +94,12 @@ use Demai\BusinessProcess\StateChangedEvent;
 
 class OrderNotificationListener
 {
-    public function __invoke(StateChangedEvent \$event): void
+    public function __invoke(StateChangedEvent $event): void
     {
-        \$entity = \$event->entity;       // Сама сущность (Order)
-        \$from = \$event->fromState;     // Предыдущее состояние
-        \$to = \$event->toState;         // Новое состояние
-        \$context = \$event->context;   // Переданные метаданные (например, ['actor_id' => 42])
+        $entity = $event->entity;       // Сама сущность (Order)
+        $from = $event->fromState;     // Предыдущее состояние
+        $to = $event->toState;         // Новое состояние
+        $context = $event->context;   // Переданные метаданные (например, ['actor_id' => 42])
         
         // Ваша логика (отправка писем, логирование действия в аудит-лог и т.д.)
     }
