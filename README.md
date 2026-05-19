@@ -38,7 +38,7 @@ class Order extends BaseEntity
 
     public function getId(): int
     {
-        return \$this->id;
+        return $this->id;
     }
 }
 ```
