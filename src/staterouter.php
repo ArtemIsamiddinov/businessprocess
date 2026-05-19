@@ -39,6 +39,6 @@ class StateRouter
             );
         }
 
-        return $this->entity->setState($state);
+        return $result;
     }
 }
