@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Demai\BusinessProcess\Tests;
+
 use PHPUnit\Framework\TestCase;
 use \Closure;
 use Demai\BusinessProcess\Entity\BaseEntity;

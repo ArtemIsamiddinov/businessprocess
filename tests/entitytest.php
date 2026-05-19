@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Demai\BusinessProcess\Tests;
+
 use Demai\BusinessProcess\Entity\BaseEntity;
 use PHPUnit\Framework\TestCase;
 use Demai\BusinessProcess\State\NullState;
